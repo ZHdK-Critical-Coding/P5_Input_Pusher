@@ -23,26 +23,32 @@ nie im Browser-Code stehen darf –, deshalb schickt der Client per POST an
 den Server.
 
 1. Die Channels-App erstellen und die **App Keys** kopieren.
-2. Den Server starten:
+2. Den Server einrichten:
    ```bash
    git clone https://github.com/ZHdK-Critical-Coding/Servers_Pusher.git
    cd Servers_Pusher
    npm install
    cp .env.example .env   # Keys in .env eintragen
-   npm start              # -> http://localhost:3000
    ```
 3. Den öffentlichen Key und den Cluster in `PUSHER_KEY` / `PUSHER_CLUSTER`
    in `Display/sketch.js` eintragen.
-4. Den Ordner in Visual Studio Code öffnen und `Display/index.html` und
-   `Client/index.html` mit Live Server öffnen (Rechtsklick → **Open with
-   Live Server**).
-5. Im Client eine Nachricht eingeben und auf **Send** klicken – sie
-   erscheint auf dem Display.
 
 Läuft der Server auf einem anderen Rechner, `SERVER_URL` in
 `Client/sketch.js` anpassen.
 
 Bibliotheken (CDN): p5.js 1.9.4, Pusher JS 8.4.0 (nur Display).
+
+## Ausführen
+
+1. Den Server starten (im Ordner `Servers_Pusher`):
+   ```bash
+   npm start              # -> http://localhost:3000
+   ```
+2. Den Ordner in Visual Studio Code öffnen und `Display/index.html` und
+   `Client/index.html` mit Live Server öffnen (Rechtsklick → **Open with
+   Live Server**).
+3. Im Client eine Nachricht eingeben und auf **Send** klicken – sie
+   erscheint auf dem Display.
 
 ## Coding-Hilfe
 

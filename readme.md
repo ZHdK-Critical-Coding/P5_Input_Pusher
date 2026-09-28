@@ -21,26 +21,32 @@ trigger Pusher events itself — that needs the app secret, which must never
 live in browser code — so the client POSTs to the server instead.
 
 1. Create the Channels app and copy its **App Keys**.
-2. Start the server:
+2. Set up the server:
    ```bash
    git clone https://github.com/ZHdK-Critical-Coding/Servers_Pusher.git
    cd Servers_Pusher
    npm install
    cp .env.example .env   # paste your keys into .env
-   npm start              # -> http://localhost:3000
    ```
 3. Put your public key and cluster into `PUSHER_KEY` / `PUSHER_CLUSTER` in
    `Display/sketch.js`.
-4. Open the folder in Visual Studio Code and open `Display/index.html` and
-   `Client/index.html` with Live Server (right-click → **Open with Live
-   Server**).
-5. Type a message in the client and click **Send** — it appears on the
-   display.
 
 If the server runs on another machine, change `SERVER_URL` in
 `Client/sketch.js`.
 
 Libraries (CDN): p5.js 1.9.4, Pusher JS 8.4.0 (Display only).
+
+## How to Run
+
+1. Start the server (in the `Servers_Pusher` folder):
+   ```bash
+   npm start              # -> http://localhost:3000
+   ```
+2. Open the folder in Visual Studio Code and open `Display/index.html` and
+   `Client/index.html` with Live Server (right-click → **Open with Live
+   Server**).
+3. Type a message in the client and click **Send** — it appears on the
+   display.
 
 ## Coding Help
 
