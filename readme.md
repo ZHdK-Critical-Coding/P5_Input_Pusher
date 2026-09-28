@@ -14,27 +14,35 @@ Client/ (p5 sender)  --POST /message-->  Servers_Pusher (Node)  --trigger-->  Pu
 
 ## Installation
 
-Requirements: a free Channels app on https://pusher.com and the relay server
-[Servers_Pusher](https://github.com/ZHdK-Critical-Coding/Servers_Pusher)
-(locally `../Servers_Pusher`, not part of this repo). The browser can't
-trigger Pusher events itself — that needs the app secret, which must never
-live in browser code — so the client POSTs to the server instead.
+Requirements: a free Channels app on https://pusher.com and the relay
+server (see Server).
 
 1. Create the Channels app and copy its **App Keys**.
-2. Set up the server:
-   ```bash
-   git clone https://github.com/ZHdK-Critical-Coding/Servers_Pusher.git
-   cd Servers_Pusher
-   npm install
-   cp .env.example .env   # paste your keys into .env
-   ```
-3. Put your public key and cluster into `PUSHER_KEY` / `PUSHER_CLUSTER` in
+2. Put your public key and cluster into `PUSHER_KEY` / `PUSHER_CLUSTER` in
    `Display/sketch.js`.
 
-If the server runs on another machine, change `SERVER_URL` in
-`Client/sketch.js`.
-
 Libraries (CDN): p5.js 1.9.4, Pusher JS 8.4.0 (Display only).
+
+## Server
+
+Needs the Node server
+[Servers_Pusher](https://github.com/ZHdK-Critical-Coding/Servers_Pusher)
+(locally `../Servers_Pusher`, not part of this repo) on port 3000. The
+browser can't trigger Pusher events itself — that needs the app secret,
+which must never live in browser code — so the client POSTs to the server
+instead. It can run on the same computer or on another machine in the
+network. Set it up once; it must be running before you open the sketches
+(How to Run, step 1):
+
+```bash
+git clone https://github.com/ZHdK-Critical-Coding/Servers_Pusher.git
+cd Servers_Pusher
+npm install
+cp .env.example .env   # paste your keys into .env
+```
+
+If the server runs on another machine, change `SERVER_URL` in
+`Client/sketch.js` (default `http://localhost:3000/message`).
 
 ## How to Run
 
