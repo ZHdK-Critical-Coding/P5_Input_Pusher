@@ -2,5 +2,6 @@ name: "Pusher"
 date: 2026-09-16
 author: Urs Hofer
 technology: "P5.js"
+maincategory: code-samples
 category: input
 related: Servers_Pusher
